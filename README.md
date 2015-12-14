@@ -1,13 +1,14 @@
 # Linux-Console
 Tips &amp; Tricks
 
+#replace all the blank lines // -i = alias for backup
+sed -i=backup '/^\s*$/d' filename 
 
-sed -i=backup '/^\s*$/d' filename # replace all the blank lines // -i = alias for backup
+# sort by 6nd key from a string as " s:s:s:s:s:key:... /n" and the 7nd key as secondary factor
+sort -t\: -k6,6n -k7,7n oldfile > newfile 
 
-sort -t\: -k6,6n -k7,7n oldfile > newfile // sort by 6nd key from a string as " s:s:s:s:s:key:... /n" and the 7nd key as secondary factor
+#replace \n with | in file
+sed -i=backup "s/\n/|/g" filename 
 
-
-sed -i=backup "s/\n/|/g" filename // replace \n with | in file
-
-
-sed -i=backup ':a;N;$!ba;s/\n/|/g' filename // replace \n with |
+#replace \n with |
+sed -i=backup ':a;N;$!ba;s/\n/|/g' filename 
