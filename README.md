@@ -8,3 +8,6 @@ sort -t\: -k6,6n -k7,7n oldfile > newfile // sort by 6nd key from a string as " 
 
 
 sed -i=backup "s/\n/|/g" filename // replace \n with | in file
+
+
+sed -i=backup ':a;N;$!ba;s/\n/|/g' filename // replace \n with |
