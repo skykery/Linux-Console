@@ -1,0 +1,6 @@
+sed -i=backup '/^\s*$/d' filename # replace all the blank lines // -i = alias for backup
+
+sort -t\: -k6,6n -k7,7n oldfile > newfile // sort by 6nd key from a string as " s:s:s:s:s:key:... /n" and the 7nd key as secondary factor
+
+
+sed -i=backup "s/\n/|/g" filename // replace \n with | in file
