@@ -1,0 +1,9 @@
+#Function to get ips from https://free-proxy-list.net/
+ips = $("#proxylisttable tr>td:first-child")
+ports = $("#proxylisttable tr>td:nth-child(2)")
+results = []
+for(i = 0;i<ips.length;i++)
+{
+	results.push( $(ips[i]).text() + ":" + $(ports[i]).text() )
+}
+console.log(results)
